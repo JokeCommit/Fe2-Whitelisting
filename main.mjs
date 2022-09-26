@@ -66,7 +66,7 @@ client.on('interactionCreate', async function(interaction) {
 			cooldowns[interaction.user.id] = Math.round(Date.now() / 1000) + cooldownSeconds
 			await interaction.editReply("Successfully whitelisted " + id)
 		} catch (e) {
-			var reason = "throttled by roblox, try again later"
+			let reason = "throttled by roblox, try again later"
 			if (typeof(e) == "string" && e.startsWith("__")) reason = e.slice(2)
 			await interaction.editReply("Whitelisting failed: " + reason)
 		}
