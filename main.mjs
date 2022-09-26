@@ -57,7 +57,7 @@ client.on('interactionCreate', async function(interaction) {
 			productBuyRequest.setRequestHeader("Content-Type", "application/json; charset=UTF-8")
 			productBuyRequest.setRequestHeader("cookie", cookie)
 			productBuyRequest.setRequestHeader("x-csrf-token", token)
-			productBuyRequest.send(JSON.stringify({ expectedCurrency: 1, expectedPrice: 0, expectedSellerId: productInfo.Creator.Id }))
+			productBuyRequest.send(JSON.stringify({ expectedCurrency: 1, expectedPrice: 0, expectedSellerId: productInfo.Creator.CreatorTargetId }))
 			const productBuyResponse = JSON.parse(productBuyRequest.responseText)
 
 			// errors if the purchase failed
